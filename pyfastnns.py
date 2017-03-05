@@ -41,6 +41,14 @@ class NNS:
             dist, index = self.tree.query(inp)
             return index, dist
 
+    def search_in_distance(self, inp, r):
+        u"""
+        find points with in a distance r
+        """
+
+        index = self.tree.query_ball_point(inp, r)
+        return index
+
 
 def test_2d():
     import matplotlib.pyplot as plt
